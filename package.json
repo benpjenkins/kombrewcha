@@ -13,9 +13,12 @@
     "@leveluptuts/fresh": "^0.0.26",
     "apollo-boost": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
     "apollo-server-micro": "^2.9.7",
+    "dotenv": "^8.2.0",
     "graphql-tag": "^2.10.1",
     "isomorphic-unfetch": "^3.0.0",
+    "mongoose": "^5.7.8",
     "next": "9.1.2",
     "react": "16.11.0",
     "react-dom": "16.11.0"
