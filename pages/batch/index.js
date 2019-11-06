@@ -1,11 +1,11 @@
 import Layout from '../../components/Layout'
 
-const Event = () => {
+const Batch = () => {
   return (
     <Layout>
-      <h1>Event Index</h1>
+      <h1>Batch Index</h1>
     </Layout>
   )
 }
 
-export default Event
+export default Batch
