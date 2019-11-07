@@ -1,14 +1,13 @@
-import Batch from './Batch';
-
+import Batch from "./Batch";
 
 const BatchList = () => {
   return (
     <section>
-    <h2>My Batches</h2>
-    <Batch />
-    <Batch />
-    <Batch />
-    <Batch />
+      <h2>My Batches</h2>
+      <Batch />
+      <Batch />
+      <Batch />
+      <Batch />
     </section>
   );
 };
