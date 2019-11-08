@@ -1,6 +1,6 @@
 export const batchesResolvers = {
   Query: {
-    async batch() {
+    async batches() {
       return [
         {
           _id: "thefirstbatch",

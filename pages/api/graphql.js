@@ -1,20 +1,32 @@
 import { ApolloServer, gql } from "apollo-server-micro";
+import { mergeResolvers, mergeTypeDefs } from "graphql-toolkit";
 import connectDb from "../../lib/mongoose";
+import { batchesResolvers } from "../../api/batches/resolvers";
+import { batchesMutations } from "../../api/batches/mutations";
+import Batches from "../../api/batches/Batches.graphql";
 
 //define the available api queries
-const typeDefs = gql`
+const fakeTypeDefs = gql`
   type Query {
     sayHello: String
   }
 `;
 //What happens when you actually make the query
-const resolvers = {
+const fakeResolvers = {
   Query: {
     sayHello: () => {
       return "Hello World!";
     }
   }
 };
+
+const resolvers = mergeResolvers([
+  fakeResolvers,
+  batchesResolvers,
+  batchesMutations
+]);
+
+const typeDefs = mergeTypeDefs([fakeTypeDefs, Batches]);
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
