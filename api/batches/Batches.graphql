@@ -1,0 +1,17 @@
+type Batch {
+  _id: ID!
+  name: String!
+}
+
+input BatchInput {
+  _id: ID
+  name: String!
+}
+
+type Mutation {
+  addBatch(batch: BatchInput): Batch
+}
+
+type Query {
+  batches: [Batch]
+}
