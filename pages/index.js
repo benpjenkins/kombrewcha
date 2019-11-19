@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import { withApollo } from "../lib/apollo";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import BatchForm from "../components/BatchForm";
 import BatchList from "../components/BatchList";
 const HELLO_QUERY = gql`
   query HelloQuery {
@@ -21,6 +22,7 @@ const Home = () => {
     <Layout>
       <div className="hero">
         <h1 className="title">{data.sayHello}</h1>
+        <BatchForm />
         <BatchList />
       </div>
 

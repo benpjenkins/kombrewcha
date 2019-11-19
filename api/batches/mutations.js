@@ -1,7 +1,16 @@
+import Batches from "./batches";
+
 export const batchesMutations = {
   Mutation: {
     async addBatch(_, { batch }, context) {
-      console.log("add batch");
+      try {
+        const newBatch = await Batches.create({
+          ...batch
+        });
+        return newBatch;
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
