@@ -7,7 +7,7 @@ export const batchesResolvers = {
         const batches = await Batches.find();
         return batches;
       } catch (error) {
-        console.log(erorr);
+        console.log(error);
       }
     }
   }
