@@ -13,7 +13,9 @@ const ADD_BATCH = gql`
 
 const BatchForm = () => {
   const [name, setName] = useState("");
-  const [addBatch] = useMutation(ADD_BATCH);
+  const [addBatch] = useMutation(ADD_BATCH, {
+    refetchQueries: ["getBatches"]
+  });
   // const [teaType, setTeaType] = useState("");
   // const [teaAmount, setTeaAmount] = useState("");
   // const [sugarAmount, setSugarAmount] = useState("");
@@ -22,8 +24,6 @@ const BatchForm = () => {
   // const [dateBottled, setDateBottled] = useState("");
 
   const handleSubmit = data => {
-    console.log("in handle submit");
-    console.log("name", name);
     event.preventDefault();
     addBatch({
       variables: {

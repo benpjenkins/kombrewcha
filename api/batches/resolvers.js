@@ -1,12 +1,14 @@
+import Batches from "./batches";
+
 export const batchesResolvers = {
   Query: {
     async batches() {
-      return [
-        {
-          _id: "thefirstbatch",
-          name: "Ben's Kombuhca"
-        }
-      ];
+      try {
+        const batches = await Batches.find();
+        return batches;
+      } catch (error) {
+        console.log(erorr);
+      }
     }
   }
 };
